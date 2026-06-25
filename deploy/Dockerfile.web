@@ -1,0 +1,13 @@
+# syntax=docker/dockerfile:1
+#
+# Статический лендинг ailc на nginx. Собирается из корня репозитория ailc-web:
+#   docker build -f deploy/Dockerfile.web -t ailc-web .
+#   docker run --rm -p 8080:80 ailc-web   # сайт на http://localhost:8080
+#
+# Это отдельный образ от MCP-сервера (../Dockerfile): сайт это статика, а MCP-сервер
+# это бинарь, запускаемый локально через stdio. Разные задачи, разные образы.
+
+FROM nginx:1.27-alpine
+COPY site/ /usr/share/nginx/html/
+COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
