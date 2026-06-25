@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>AILC: проверка кода от ИИ прямо в редакторе, с понятным вердиктом</title>
+<meta name="description" content="AILC подключается в ваш редактор одной строкой и проверяет код на опасные места и ошибки. Решение «можно ли сдавать» выносят точные правила по понятной формуле, результат всегда одинаковый. Всё считается на вашей машине, код никуда не уходит. 74 проверки, 15 языков, работает офлайн.">
+<meta property="og:title" content="AILC: проверка кода от ИИ прямо в редакторе">
+<meta property="og:description" content="Подключается одной строкой, проверяет код на дыры и ошибки, выносит понятный вердикт по жёстким правилам. Работает офлайн, код не уходит наружу. 74 проверки, 15 языков, открытое ядро.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b0e16">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b7cf2'/%3E%3Cpath d='M9 16l5 5 9-10' fill='none' stroke='%230b0e16' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#connect">Перейти к подключению</a>
+
+<header class="nav" id="top">
+  <div class="wrap nav__row">
+    <a class="brand" href="#top" aria-label="AILC, на главную">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+      </span>
+      <span class="brand__name">AILC</span>
+      <span class="brand__sub">AI&nbsp;Life&nbsp;Cycle</span>
+    </a>
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="#how">Как работает</a>
+      <a href="#ai">Безопасность ИИ-кода</a>
+      <a href="#caps">Возможности</a>
+      <a href="#teams">Для команд</a>
+      <a href="#faq">Вопросы</a>
+      <a class="nav__gh" href="https://github.com/pro-deploy/ailc" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn--sm" href="#connect">Подключить за минуту</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ───────────────────────── HERO ───────────────────────── -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy reveal">
+        <p class="kicker">Проверка кода прямо в редакторе · офлайн · открытый код</p>
+        <h1>Пишите с ИИ смелее. Дыры и ошибки в коде найдёт AILC.</h1>
+        <p class="lede">
+          AILC подключается в ваш редактор одной строкой и проверяет код на опасные места и
+          ошибки прямо там, где вы работаете. Решение «готово или нет» выносят точные правила по
+          понятной формуле, поэтому на одном и том же коде ответ всегда одинаковый. Всё считается
+          на вашей машине, код никуда не уходит.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--lg" href="#connect">Подключить за минуту</a>
+          <a class="btn btn--ghost btn--lg" href="https://github.com/pro-deploy/ailc" rel="noopener">Смотреть на GitHub</a>
+        </div>
+        <ul class="hero__facts" aria-label="Коротко">
+          <li><b>74</b> проверки в одной программе</li>
+          <li><b>15</b> языков</li>
+          <li><b>100%</b> офлайн</li>
+        </ul>
+      </div>
+
+      <!-- Приборная панель: вердикт о готовности кода с тремя состояниями -->
+      <figure class="verdict reveal" aria-label="Пример вердикта AILC о готовности кода">
+        <div class="verdict__bar">
+          <span class="verdict__dot" aria-hidden="true"></span>
+          <span class="verdict__title">AILC · ГОТОВ К СДАЧЕ?</span>
+          <span class="verdict__path">~/project</span>
+        </div>
+        <ul class="verdict__axes">
+          <li class="ok"><span class="ax">Пароли и ключи</span><span class="val">чисто</span></li>
+          <li class="ok"><span class="ax">Опасные места в коде</span><span class="val">чисто</span></li>
+          <li class="ok"><span class="ax">Известные дыры в библиотеках</span><span class="val">0</span></li>
+          <li class="warnrow"><span class="ax">Недоделки и заглушки</span><span class="val">2</span></li>
+          <li class="warnrow"><span class="ax">Тесты</span><span class="val">не&nbsp;запускались</span></li>
+        </ul>
+        <div class="verdict__out verdict__out--hold">
+          <span class="verdict__label">Балл качества</span>
+          <span class="verdict__score">86<span>/100</span></span>
+          <span class="verdict__state">ПОКА НЕ ГОТОВ</span>
+        </div>
+        <p class="verdict__note">Две недоделки и незапущенные тесты. AILC не напишет «готово», пока проверка по-настоящему не пройдена.</p>
+      </figure>
+    </div>
+    <div class="hero__glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- ───────────────────────── TRUST STRIP ───────────────────────── -->
+  <section class="trust" aria-label="Факты о проекте">
+    <div class="wrap trust__row">
+      <div class="trust__item"><b>622</b><span>теста пройдено</span></div>
+      <div class="trust__item"><b>74</b><span>инструмента проверки</span></div>
+      <div class="trust__item"><b>15</b><span>языков и 12 экосистем</span></div>
+      <div class="trust__item"><b>Apache&nbsp;2.0</b><span>открытое ядро</span></div>
+      <div class="trust__editors">
+        Работает в <span class="chip">Cline</span><span class="chip">Copilot · VS&nbsp;Code</span><span class="chip">Claude&nbsp;Code</span><span class="chip">Cursor</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── PROBLEM ───────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Знакомая история</h2>
+        <p class="sec-sub">ИИ пишет код за секунды. А проверить глазами, что он там насочинял, вы не успеваете.</p>
+      </header>
+      <div class="pains">
+        <article class="pain">
+          <p>ИИ выдал код, вы его вставили и пошли дальше. А там мог затесаться забытый ключ, дыра для взлома или недоделка. После пары правок таких мест становится больше, и заметить их глазами всё сложнее.</p>
+        </article>
+        <article class="pain">
+          <p>Проверялок много: одна на секреты, другая на уязвимости, третья на зависимости. У каждой свой формат и своя настройка. Собирать и обслуживать этот зоопарк нет ни времени, ни желания.</p>
+        </article>
+      </div>
+
+      <p class="relief__lead">AILC берёт это на себя, прямо в редакторе:</p>
+      <div class="why">
+        <article class="why__item">
+          <h3>Не врёт «готово»</h3>
+          <p>Вердикт считают жёсткие правила. На одном и том же коде ответ всегда одинаковый, его можно показать руководителю или поставить условием выкатки.</p>
+        </article>
+        <article class="why__item">
+          <h3>Не пугает зря</h3>
+          <p>Половину пустых тревог отсекает сам: ключ в комментарии, заглушку, пример из учебника. Красным помечает только настоящие проблемы.</p>
+        </article>
+        <article class="why__item">
+          <h3>Видит, что спрятано</h3>
+          <p>Отслеживает опасный путь данных через строки и функции. Ловит дыры, типичные именно для кода от нейросетей.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── HOW (3 шага) ───────────────────────── -->
+  <section class="section section--alt" id="how">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Как это работает</h2>
+        <p class="sec-sub">Три шага, всё внутри редактора, который у вас уже открыт.</p>
+      </header>
+      <ol class="afterconnect" aria-label="Три шага">
+        <li>
+          <span class="afterconnect__n">01</span>
+          <h3>Вставьте три строки</h3>
+          <p>В настройку редактора. Готовая программа под вашу систему скачается сама. Ни сборки, ни скриптов, ни Rust.</p>
+        </li>
+        <li>
+          <span class="afterconnect__n">02</span>
+          <h3>Напишите простыми словами</h3>
+          <p>Например, «проверь, всё ли хорошо перед сдачей». Имена инструментов знать не нужно, AILC сам подберёт проверки.</p>
+        </li>
+        <li>
+          <span class="afterconnect__n">03</span>
+          <h3>Получите понятный вердикт</h3>
+          <p>Список проблем, балл качества и кнопка починить формат и стиль. Опасное помечено красным, остальное подсказками.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── В РЕДАКТОРЕ ───────────────────────── -->
+  <section class="section" id="inflow">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Как это выглядит в работе</h2>
+        <p class="sec-sub">Вы пишете агенту обычную просьбу. AILC проверяет и отвечает прямо в чате редактора, понятным языком и с указанием, где чинить.</p>
+      </header>
+      <div class="chat">
+        <div class="chat__bar">
+          <span class="chat__dot"></span><span class="chat__dot"></span><span class="chat__dot"></span>
+          <span class="chat__title">Cursor · ваш проект</span>
+        </div>
+        <div class="chat__body">
+          <div class="msg msg--you">
+            <span class="msg__who">вы</span>
+            <p>проверь, всё ли ок перед сдачей</p>
+          </div>
+          <div class="msg msg--ai">
+            <span class="msg__who">AILC</span>
+            <div class="msg__bubble">
+              <p>Прогнал 28 проверок. Нашёл 1 блокер и 2 совета.</p>
+              <ul class="msg__list">
+                <li class="bad">Секрет в коде: боевой ключ Stripe, settings.py:14</li>
+                <li class="warn">Недоделка: функция charge_card не дописана, billing.py:3</li>
+                <li class="warn">Совет: три функции длиннее 80 строк, стоит разбить</li>
+              </ul>
+              <p class="msg__score">Балл качества 78 из 100. Сдавать пока рано.</p>
+              <p class="msg__act">Починить формат и стиль автоматически? <span class="msg__btn">Да</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── DEMO + CONNECT ───────────────────────── -->
+  <section class="section" id="connect">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Попробуйте за минуту</h2>
+        <p class="sec-sub">Слева, что вставить. Справа, что вы получите в ответ. Без формы и регистрации.</p>
+      </header>
+
+      <div class="installer">
+        <div class="installer__head">
+          <h3>Совсем с нуля? Одна команда</h3>
+          <p>Поставит AILC и сама напечатает готовый конфиг. Node и Docker не нужны.</p>
+        </div>
+        <div class="installer__cmds">
+          <div class="installer__row">
+            <span class="installer__os">macOS · Linux</span>
+            <code>curl -fsSL https://raw.githubusercontent.com/pro-deploy/ailc/main/install.sh | sh</code>
+          </div>
+          <div class="installer__row">
+            <span class="installer__os">Windows</span>
+            <code>irm https://raw.githubusercontent.com/pro-deploy/ailc/main/install.ps1 | iex</code>
+          </div>
+        </div>
+      </div>
+
+      <p class="connect__or">Уже есть Node.js или Docker? Вставьте конфиг сразу:</p>
+
+      <div class="connect__grid">
+        <div class="connect">
+          <div class="connect__controls">
+            <div class="seg" role="tablist" aria-label="Редактор">
+              <button class="seg__btn is-active" role="tab" aria-selected="true" data-editor="claude">Claude&nbsp;Code</button>
+              <button class="seg__btn" role="tab" aria-selected="false" data-editor="cursor">Cursor</button>
+              <button class="seg__btn" role="tab" aria-selected="false" data-editor="vscode">VS&nbsp;Code · Copilot</button>
+              <button class="seg__btn" role="tab" aria-selected="false" data-editor="cline">Cline</button>
+            </div>
+            <div class="seg seg--alt" role="tablist" aria-label="Способ установки">
+              <button class="seg__btn is-active" role="tab" aria-selected="true" data-delivery="npx">через npx</button>
+              <button class="seg__btn" role="tab" aria-selected="false" data-delivery="docker">через Docker</button>
+            </div>
+          </div>
+
+          <div class="code" data-code>
+            <div class="code__head">
+              <span class="code__file" data-file>.mcp.json</span>
+              <button class="code__copy" data-copy type="button">
+                <svg class="i-copy" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-copylabel>Копировать</span>
+              </button>
+            </div>
+            <pre class="code__body"><code data-codetext></code></pre>
+          </div>
+
+          <p class="connect__hint" data-hint></p>
+        </div>
+
+        <!-- что вы получите в ответ -->
+        <figure class="verdict verdict--demo" aria-label="Пример ответа инструмента dod">
+          <div class="verdict__bar">
+            <span class="verdict__dot" aria-hidden="true"></span>
+            <span class="verdict__title">ailc dod .</span>
+            <span class="verdict__path">вердикт готовности</span>
+          </div>
+          <ul class="verdict__axes">
+            <li class="ok"><span class="ax">Пароли и ключи</span><span class="val">чисто</span></li>
+            <li class="ok"><span class="ax">Опасные места (SAST)</span><span class="val">чисто</span></li>
+            <li class="ok"><span class="ax">Поток данных от ввода</span><span class="val">чисто</span></li>
+            <li class="failrow"><span class="ax">Недоделки</span><span class="val">1</span></li>
+            <li class="ok"><span class="ax">Документация актуальна</span><span class="val">да</span></li>
+          </ul>
+          <div class="verdict__out verdict__out--fail">
+            <span class="verdict__label">Балл качества</span>
+            <span class="verdict__score">78<span>/100</span></span>
+            <span class="verdict__state">ЕСТЬ БЛОКЕР</span>
+          </div>
+          <p class="verdict__note">Найдена недоделанная функция. Её видно с файлом и строкой, поэтому можно сразу починить.</p>
+        </figure>
+      </div>
+
+      <p class="connect__after">При первом подключении AILC скачается сам и создаст в проекте папку <code>.ailc</code> с правилами и заготовками. Дальше ИИ-агент сам зовёт проверку, когда вы просите посмотреть код.</p>
+
+      <details class="note">
+        <summary>Редактор не находит npx?</summary>
+        <p>
+          Ставили Node.js через nvm? Редактор из дока может не найти <code>npx</code>. Тогда выберите
+          Docker или впишите полный путь к файлу <code>ailc</code> (его покажет установщик, обычно
+          <code>~/.local/bin/ailc</code>) и аргумент <code>serve</code>. Для Cursor и Claude&nbsp;Code
+          вместо <code>${workspaceFolder}</code> впишите путь к папке проекта.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── AI SECURITY (ключевой блок) ───────────────────────── -->
+  <section class="section section--alt" id="ai">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Ловит дыры, типичные для кода от нейросетей</h2>
+        <p class="sec-sub">
+          AILC следит за путём данных: куда попадает то, что ввёл пользователь или ответила модель,
+          и не доходит ли это до опасного места. Связь видна, даже если её разделяют несколько строк
+          и переименований переменной. Обычные построчные проверки такое пропускают.
+        </p>
+      </header>
+      <div class="danger">
+        <article class="danger__item">
+          <span class="danger__tag">опасность 1</span>
+          <h3>Ответ модели уходит в дело без проверки</h3>
+          <p>Текст от нейросети попадает прямо в исполнение команды или на страницу. Через такую лазейку можно навредить. AILC замечает, что недоверенный ответ дошёл до опасного вызова.</p>
+        </article>
+        <article class="danger__item">
+          <span class="danger__tag">опасность 2</span>
+          <h3>Чужой ввод подменяет инструкцию модели</h3>
+          <p>Пользовательский текст по кусочкам собирается в запрос к нейросети, и им можно подменить команду. AILC отслеживает, как ввод собирается в подсказку, и помечает это место.</p>
+        </article>
+      </div>
+      <p class="danger__foot">Покрыт список OWASP для ИИ-приложений: инъекция в подсказку модели и небезопасная обработка её вывода. В каждом сообщении ссылка на каталог уязвимостей CWE.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── CASES ───────────────────────── -->
+  <section class="section" id="cases">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Шесть случаев из жизни</h2>
+        <p class="sec-sub">Так выглядит код, который обычно выдаёт ИИ-агент, и так на него отвечает AILC. С файлом, строкой и серьёзностью, чтобы сразу было что чинить.</p>
+      </header>
+      <div class="cases">
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">Секреты</span><h3>Ключ остался прямо в коде</h3></div>
+          <pre class="case__code"><code># settings.py
+<span class="case__bad">STRIPE_KEY = "sk_live_4eC39HqLyjWDarjtT1zd"</span></code></pre>
+          <div class="case__find case__find--crit">
+            <span class="case__sev">критично</span>
+            <span class="case__where">Боевой ключ Stripe в коде · settings.py:2</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">SQL-инъекция</span><h3>Ввод пользователя ушёл в запрос</h3></div>
+          <pre class="case__code"><code>uid = request.args["id"]
+<span class="case__bad">q = f"SELECT * FROM users WHERE id={uid}"</span>
+db.execute(q)</code></pre>
+          <div class="case__find case__find--high">
+            <span class="case__sev">высокая</span>
+            <span class="case__where">Ввод дошёл до запроса · users.py:2 · CWE-89</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">Вывод модели</span><h3>Выполняем ответ нейросети как код</h3></div>
+          <pre class="case__code"><code>const reply = await llm.chat(prompt)
+<span class="case__bad">eval(reply.content)</span></code></pre>
+          <div class="case__find case__find--high">
+            <span class="case__sev">высокая</span>
+            <span class="case__where">eval ответа модели · agent.js:2 · OWASP LLM02</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">Обход пути</span><h3>Имя файла берём прямо из запроса</h3></div>
+          <pre class="case__code"><code>const name = req.query.name
+<span class="case__bad">res.sendFile("/data/" + name)</span></code></pre>
+          <div class="case__find case__find--high">
+            <span class="case__sev">высокая</span>
+            <span class="case__where">Можно выйти за папку · files.js:2 · CWE-22</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">Недоделка</span><h3>ИИ оставил заглушку и забыл</h3></div>
+          <pre class="case__code"><code>def charge_card(amount):
+    # TODO: дописать списание
+    <span class="case__bad">raise NotImplementedError</span></code></pre>
+          <div class="case__find case__find--block">
+            <span class="case__sev">блокер</span>
+            <span class="case__where">Не дописано списание · billing.py:3</span>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__top"><span class="case__tag">Зависимости</span><h3>Подтянулась дырявая библиотека</h3></div>
+          <pre class="case__code"><code># package-lock.json
+<span class="case__bad">"lodash": "4.17.11"</span></code></pre>
+          <div class="case__find case__find--high">
+            <span class="case__sev">высокая</span>
+            <span class="case__where">Известная уязвимость · обновите до 4.17.21</span>
+          </div>
+        </article>
+
+      </div>
+      <p class="cases__foot">И это малая часть. Внутри 74 проверки: захардкоженные ключи 31 вида, весь список OWASP&nbsp;Top&nbsp;10, поток данных на 15 языках, мёртвый код, циклы, устаревшие доки, комплаенс. Имена знать не нужно, AILC подберёт сам.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── ПОД КАПОТОМ ───────────────────────── -->
+  <section class="section section--alt" id="how-deep">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Под капотом: откуда берётся вердикт</h2>
+        <p class="sec-sub">Никакой магии и никаких догадок нейросети в итоге. Понятная цепочка, где последнее слово за жёсткими правилами.</p>
+      </header>
+
+      <ol class="pipeline" aria-label="Как считается вердикт">
+        <li class="pipeline__step">
+          <span class="pipeline__ic" aria-hidden="true">◇</span>
+          <h3>Намерение</h3>
+          <p>Вы простыми словами говорите, что нужно проверить.</p>
+        </li>
+        <li class="pipeline__step">
+          <span class="pipeline__ic" aria-hidden="true">⧉</span>
+          <h3>Планировщик</h3>
+          <p>AILC сам выбирает нужные проверки под ваш проект и язык.</p>
+        </li>
+        <li class="pipeline__step">
+          <span class="pipeline__ic" aria-hidden="true">≣</span>
+          <h3>Проверки</h3>
+          <p>Десятки проверок идут разом: секреты, поток данных, зависимости, качество.</p>
+        </li>
+        <li class="pipeline__step">
+          <span class="pipeline__ic" aria-hidden="true">⊘</span>
+          <h3>Опровержение</h3>
+          <p>Каждую находку AILC пытается опровергнуть. Ложные выкидывает, в отчёт идёт только настоящее.</p>
+        </li>
+        <li class="pipeline__step pipeline__step--final">
+          <span class="pipeline__ic" aria-hidden="true">✓</span>
+          <h3>Балл и вердикт</h3>
+          <p>Жёсткая формула считает балл от 0 до 100. Нейросеть на него не влияет.</p>
+        </li>
+      </ol>
+
+      <div class="formula">
+        <span class="formula__lead">Как считается балл</span>
+        <p>100 баллов минус штраф за каждую находку. Критичная стоит 25, высокая 10, средняя 3, низкая 1 балл. На одном и том же коде балл всегда одинаковый, поэтому его можно показать руководителю или сделать условием выкатки в продакшен.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── WHAT IT CHECKS ───────────────────────── -->
+  <section class="section" id="caps">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Что AILC находит в вашем коде</h2>
+        <p class="sec-sub">Не обещания, а конкретика. Внутри 74 инструмента в девяти семействах, вот главное.</p>
+      </header>
+      <div class="caps">
+        <article class="cap">
+          <header><h3>Безопасность</h3><span class="cap__count">13</span></header>
+          <p>Захардкоженные ключи: AWS, GitHub, Stripe и ещё 28 видов. Уязвимости из списка OWASP&nbsp;Top&nbsp;10. Проверка библиотек на известные дыры, офлайн по базе OSV.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Качество</h3><span class="cap__count">9</span></header>
+          <p>Запахи кода, неиспользуемый код, слишком сложные функции, циклические зависимости, недоделки и заглушки, недокументированный код.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Документация и контракт</h3><span class="cap__count">9</span></header>
+          <p>Устаревшая документация относительно кода и сломанный публичный интерфейс, которым пользуются другие части. Доки обновляются прямо из кода.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Комплаенс РФ</h3><span class="cap__count">5</span></header>
+          <p>Персональные данные в логах (152-ФЗ), хранение данных за рубежом (242-ФЗ), иностранные трекеры. Это сигналы для ревью, а не юридическая гарантия.</p>
+        </article>
+      </div>
+      <p class="caps__more">И ещё код-интеллект (карта проекта, граф вызовов), запуск тестов и линтера на 15 стеках, генерация документации, заметки и задачи. Имена знать не нужно: AILC подбирает проверки сам.</p>
+      <div class="langband">
+        <span class="langband__lead">Глубокий разбор на 15 языках</span>
+        <div class="langband__row">
+          <span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Go</span><span class="chip">Java</span><span class="chip">Ruby</span><span class="chip">PHP</span><span class="chip">C#</span><span class="chip">Rust</span><span class="chip">Kotlin</span><span class="chip">Scala</span><span class="chip">C</span><span class="chip">C++</span><span class="chip">Swift</span><span class="chip">Dart</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── COMPARE ───────────────────────── -->
+  <section class="section section--alt" id="compare">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Чем отличается от привычного</h2>
+        <p class="sec-sub">Если вы уже просили нейросеть «глянуть код» или ставили классический сканер, вот в чём разница.</p>
+      </header>
+      <div class="cmp">
+        <table class="cmp__table">
+          <thead>
+            <tr>
+              <th>Что важно</th>
+              <th class="cmp__col-me">AILC</th>
+              <th>Проверка нейросетью</th>
+              <th>Классический сканер</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Результат одинаковый каждый раз</td><td class="y cmp__col-me">да</td><td class="n">нет</td><td class="y">да</td></tr>
+            <tr><td>Сам отсекает ложные тревоги</td><td class="y cmp__col-me">да</td><td class="p">как повезёт</td><td class="n">нет</td></tr>
+            <tr><td>Видит опасный путь данных между строками</td><td class="y cmp__col-me">да</td><td class="p">отчасти</td><td class="p">отчасти</td></tr>
+            <tr><td>Ловит дыры именно в коде от ИИ</td><td class="y cmp__col-me">да</td><td class="n">нет</td><td class="n">нет</td></tr>
+            <tr><td>Код не уходит наружу, работает офлайн</td><td class="y cmp__col-me">да</td><td class="n">нет, облако</td><td class="p">по-разному</td></tr>
+            <tr><td>Сигналы комплаенса РФ (152-ФЗ, 242-ФЗ)</td><td class="y cmp__col-me">да</td><td class="n">нет</td><td class="n">нет</td></tr>
+            <tr><td>Подключение</td><td class="cmp__col-me">одна строка</td><td class="p">встроено в чат</td><td class="p">настройка CI</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── ВЕСЬ ЦИКЛ ───────────────────────── -->
+  <section class="section" id="cycle">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Не только проверка, а весь цикл</h2>
+        <p class="sec-sub">AILC расшифровывается как AI Life Cycle. Он рядом на всех шагах работы с кодом, а не просто ругает за ошибки в конце.</p>
+      </header>
+      <div class="caps">
+        <article class="cap">
+          <header><h3>Проектирование фичи</h3><span class="cap__count">design</span></header>
+          <p>Заготовка спецификации и запись архитектурного решения, чтобы ИИ не начинал с чистого листа и не ломал то, что уже работает.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Автопочинка</h3><span class="cap__count">fix</span></header>
+          <p>Чинит формат и стиль сама, безопасно, не трогая логику. Одна команда вместо ручного причёсывания кода.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Фоновый присмотр</h3><span class="cap__count">watch</span></header>
+          <p>Следит за проектом в фоне, гоняет быстрые проверки и держит документацию свежей. Можно поставить на автозапуск.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Документация из кода</h3><span class="cap__count">docs</span></header>
+          <p>Описание, архитектура, схемы и словарь терминов собираются из кода и обновляются сами. Ваши ручные правки сохраняются.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Мастер комплаенса РФ</h3><span class="cap__count">152-ФЗ</span></header>
+          <p>Пара вопросов о вашем сервисе, и вы получаете персональный чек-лист: только ваши обязанности по 152-ФЗ и 242-ФЗ, а не двадцать законов вообще.</p>
+        </article>
+        <article class="cap">
+          <header><h3>Отчёт для CI</h3><span class="cap__count">SARIF</span></header>
+          <p>Стандартный отчёт SARIF&nbsp;2.1.0 идёт прямо во вкладку безопасности GitHub или GitLab, без доработок.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FOR TEAMS ───────────────────────── -->
+  <section class="section section--alt" id="teams">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Для команды и тимлида</h2>
+        <p class="sec-sub">Один человек ещё держит планку качества в голове. Команда из десяти или пятидесяти, где часть кода пишет ИИ, в голове уже не удержит. AILC превращает «как у нас принято» в один файл правил и применяет его одинаково ко всем, от стажёра до сеньора, и в редакторе, и в пул-реквесте.</p>
+      </header>
+      <div class="why">
+        <article class="why__item">
+          <h3>Один стандарт на всех</h3>
+          <p>Что считать проблемой и что блокирует сдачу, задано один раз. Стажёр, сеньор и ИИ-агент проходят одинаковые проверки. Никто не протащит мимо ревью то, что у вас не принято, ни по незнанию, ни в спешке перед релизом.</p>
+        </article>
+        <article class="why__item">
+          <h3>Правила нельзя тихо ослабить</h3>
+          <p>Файл политики сверяется с эталоном вне репозитория. Если кто-то поднял порог или выкинул проверку, гейт покажет это в отчёте. Целостность закрепляется контрольной суммой, так что подмену видно сразу.</p>
+        </article>
+        <article class="why__item">
+          <h3>Гейт прямо на пул-реквест</h3>
+          <p>Отчёт в стандартном формате SARIF&nbsp;2.1.0 ложится во вкладку безопасности GitHub или GitLab без доработок. Блокеры видно в самом пул-реквесте, и слияние можно не пускать, пока они не закрыты.</p>
+        </article>
+        <article class="why__item">
+          <h3>Меньше рутины на ревью</h3>
+          <p>Механику AILC берёт на себя: секреты, инъекции, мёртвый код, недоделки. Ревьюер тратит время на архитектуру и смысл, а не на поиск забытого ключа или опечатки в проверке прав доступа.</p>
+        </article>
+        <article class="why__item">
+          <h3>Код остаётся внутри периметра</h3>
+          <p>Проверка идёт на машине разработчика и на ваших раннерах, без облака и без интернета. Это снимает вопросы службы безопасности и закрывает требования регуляторов: 152-ФЗ, 242-ФЗ, ФСТЭК.</p>
+        </article>
+        <article class="why__item">
+          <h3>Вердикт как условие релиза</h3>
+          <p>Один и тот же код даёт один и тот же балл по понятной формуле. На такой вердикт можно опереться: показать руководителю, занести в регламент, сделать обязательным для выкатки. Он не поедет от обновления модели.</p>
+        </article>
+      </div>
+
+      <div class="policy">
+        <div class="policy__code">
+          <div class="policy__head">
+            <span class="policy__file">ailc.policy.toml</span>
+            <span class="policy__tag">правила компании</span>
+          </div>
+          <pre><code>[gate]
+block_at = "high"          <span class="tc"># что блокирует сдачу</span>
+families = ["security", "quality", "spec"]
+
+[thresholds]
+max_complexity = 50        <span class="tc"># предел сложности функции</span>
+doc_coverage_floor = 50    <span class="tc"># доков не меньше половины</span></code></pre>
+        </div>
+        <div class="policy__note">
+          <h3>Политика как код, а не договорённость на словах</h3>
+          <p>Правила лежат в репозитории рядом с кодом и применяются ко всем автоматически. Поменять стандарт для всей команды, это один коммит в этот файл, а не переписка в чате и вечные напоминания на ревью.</p>
+          <p class="policy__free">Открытое ядро бесплатно для всей команды. Командная панель с общими метриками и корпоративный уровень с управлением доступом идут отдельно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SOCIAL PROOF ───────────────────────── -->
+  <section class="section">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2>Открыто и проверяемо</h2>
+        <p class="sec-sub">Для разработчика открытый код и честность весомее красивых логотипов.</p>
+      </header>
+      <div class="proof">
+        <div class="proof__item"><b>622</b><span>теста, включая корпус ложных срабатываний и матрицу по 15 языкам</span></div>
+        <div class="proof__item"><b>Apache&nbsp;2.0</b><span>открытое ядро, можно форкнуть, доработать и собрать самому</span></div>
+        <div class="proof__item"><b>Честно</b><span>есть публичный раздел ограничений и дорожная карта, без приукрашивания</span></div>
+        <div class="proof__item"><b>Вживую</b><span>на странице реальный вывод вердикта, а не абстрактная похвала</span></div>
+      </div>
+      <div class="proof__cta">
+        <a class="btn btn--ghost" href="https://github.com/pro-deploy/ailc" rel="noopener">Открыть код на GitHub</a>
+        <a class="btn btn--ghost" href="https://github.com/pro-deploy/ailc/blob/main/ROADMAP.md" rel="noopener">Дорожная карта</a>
+      </div>
+      <p class="honest">Честно говоря: AILC не заменяет ревью живым человеком и пентест, а сигналы по закону не юридическая гарантия. Глубокий разбор работает на 15 языках, для редких проверки проще. Мы пишем это прямо, потому что доверие дороже красивых обещаний.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FAQ ───────────────────────── -->
+  <section class="section section--alt" id="faq">
+    <div class="wrap wrap--narrow">
+      <header class="sec-head">
+        <h2>Частые вопросы</h2>
+        <p class="sec-sub">Коротко и честно, без маркетинга.</p>
+      </header>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>Сколько это стоит?</summary>
+          <p>Открытое ядро бесплатно, лицензия Apache&nbsp;2.0. Им можно пользоваться, форкать и собирать самому без ограничений. Платные дополнения (командная панель, корпоративный уровень, аттестационный отчёт по комплаенсу) идут отдельно и в открытое ядро не входят.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Ложные тревоги не убьют доверие, как у других сканеров?</summary>
+          <p>Перед показом каждая находка проходит проверку на ложность: ключ в комментарии, заглушка вроде <code>changeme</code>, описание самого правила, защищённый разбор файла. В отчёт и в балл идёт только то, что выжило проверку. Число опровергнутого видно отдельно.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Мой код никуда не утечёт?</summary>
+          <p>Нет. AILC это одна программа, которая работает на вашей машине без интернета и облака. Код не отправляется наружу. Для команд это же и аргумент приватности и российского комплаенса.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Это замедлит работу или заблокирует релиз?</summary>
+          <p>Проверка идёт локально и быстро, вердикт считается за секунды. Один шаг ограничен 180 секундами: зависшая проверка помечается, но не вешает прогон. Блокировать релиз или нет, решаете вы через правила компании. По умолчанию инструмент ничего не ломает.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Чем это лучше обычной проверки нейросетью?</summary>
+          <p>Ответ нейросети меняется от запуска к запуску и от версии модели. Здесь итоговое решение считают точные правила по понятной формуле, и на одном коде результат всегда одинаковый. Его можно показать руководителю и поставить условием выкатки.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Мой стек поддерживается?</summary>
+          <p>Глубокий анализ работает на 15 языках, включая мобильные и системные: Kotlin, Swift, Dart, C, C++. Если язык редкий, AILC честно откатывается на безопасный набор проверок и помечает, что именно не покрыто.</p>
+        </details>
+        <details class="faq__item">
+          <summary>У нас уже есть Semgrep или SonarQube. Зачем ещё это?</summary>
+          <p>Эти инструменты часто видят опасное место, только если ввод и опасный вызов на одной строке. AILC отслеживает путь данных через несколько строк и переименований, и отдельно ловит дыры, типичные именно для кода с нейросетями.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FINAL CTA ───────────────────────── -->
+  <section class="cta">
+    <div class="wrap cta__inner reveal">
+      <h2>Подключите за минуту и пишите спокойно</h2>
+      <p>Одна строка в настройку, готовая программа скачается сама. Дальше код проверяется прямо в редакторе, а вердикт всегда понятный и предсказуемый.</p>
+      <div class="cta__btns">
+        <a class="btn btn--lg" href="#connect">Подключить за минуту</a>
+        <a class="btn btn--ghost btn--lg" href="https://github.com/pro-deploy/ailc" rel="noopener">Смотреть на GitHub</a>
+      </div>
+      <p class="cta__contact">Вопросы? Telegram <a href="https://t.me/birkinmax" rel="noopener">@birkinmax</a>, группа <a href="https://t.me/bait_su" rel="noopener">@bait_su</a></p>
+    </div>
+    <div class="cta__glow" aria-hidden="true"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <span class="brand__name">AILC</span>
+      <p>Проверка качества и безопасности кода прямо в редакторе. Вердикт считают точные правила по понятной формуле, каждый раз одинаково.</p>
+      <p class="foot__lic">Открытый код, лицензия Apache&nbsp;2.0 · версия&nbsp;0.4.1</p>
+    </div>
+    <nav class="foot__nav" aria-label="Подвал">
+      <div>
+        <h4>Продукт</h4>
+        <a href="#how">Как работает</a>
+        <a href="#ai">Безопасность ИИ-кода</a>
+        <a href="#caps">Возможности</a>
+        <a href="#teams">Для команд</a>
+      </div>
+      <div>
+        <h4>Исходный код</h4>
+        <a href="https://github.com/pro-deploy/ailc" rel="noopener">Репозиторий</a>
+        <a href="https://github.com/pro-deploy/ailc/releases" rel="noopener">Релизы и файлы</a>
+        <a href="https://github.com/pro-deploy/ailc/blob/main/ROADMAP.md" rel="noopener">Дорожная карта</a>
+        <a href="https://github.com/pro-deploy/ailc/blob/main/LICENSE" rel="noopener">Лицензия</a>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <a href="https://t.me/bait_su" rel="noopener">Группа @bait_su</a>
+        <a href="https://t.me/birkinmax" rel="noopener">Написать автору</a>
+      </div>
+    </nav>
+  </div>
+  <div class="wrap foot__bottom">
+    <span>© 2026 AILC</span>
+    <span class="foot__note">Подсказки по закону не заменяют юридическую проверку. За соблюдение закона отвечает организация.</span>
+  </div>
+</footer>
+
+<a class="sticky-cta" href="#connect">Подключить за минуту</a>
+
+<script src="app.js" defer></script>
+</body>
+</html>
