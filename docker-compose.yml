@@ -1,11 +1,13 @@
-# Публикация лендинга AILC на сервере одной командой.
+# Публикация лендинга AILC одной командой: docker compose up -d --build
 #
-# На сервере:
-#   git clone https://github.com/pro-deploy/ailc-web && cd ailc-web
-#   docker compose up -d --build
+# Наружу сайт публикуется на порт 8080 хоста, внутри контейнера nginx слушает 80.
+# Порт 8080, а не 80, специально: на облачных платформах (Timeweb и подобные) порты 80
+# и 443 уже держит их обратный прокси, который сам направляет ваш домен на контейнер.
+# Привязка к 80 там даёт ошибку «port is already allocated». В настройках приложения на
+# платформе укажите порт 8080, и домен заработает по HTTPS.
 #
-# Сайт станет доступен на 80 порту сервера. Чтобы взять другой порт:
-#   PORT=8080 docker compose up -d --build
+# На обычном VPS, где 80 свободен и нужен прямой доступ: PORT=80 docker compose up -d --build
+# Любой другой порт:                                      PORT=3000 docker compose up -d --build
 #
 # Образ MCP-сервера (./Dockerfile) к публикации сайта отношения не имеет: это бинарь
 # для локального запуска в редакторе, а не веб-сервер. Здесь поднимается только сайт.
@@ -19,7 +21,7 @@ services:
     container_name: ailc-web
     restart: unless-stopped
     ports:
-      - "${PORT:-80}:80"
+      - "${PORT:-8080}:80"
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
       interval: 30s
