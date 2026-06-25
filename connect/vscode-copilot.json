@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "ailc": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "ailc-mcp"]
+    }
+  }
+}

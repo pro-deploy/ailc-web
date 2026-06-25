@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "ailc": {
+      "command": "docker",
+      "args": [
+        "run", "-i", "--rm",
+        "-v", "${workspaceFolder}:/work",
+        "-w", "/work",
+        "ghcr.io/pro-deploy/ailc:latest",
+        "serve"
+      ]
+    }
+  }
+}

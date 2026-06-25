@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ailc": {
+      "command": "npx",
+      "args": ["-y", "ailc-mcp"]
+    }
+  }
+}
