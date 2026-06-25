@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 #
-# Статический лендинг ailc на nginx. Собирается из корня репозитория ailc-web:
+# Статический лендинг AILC на nginx. Обычно собирается через корневой docker-compose.yml
+# командой `docker compose up -d --build`. Вручную, из корня репозитория:
 #   docker build -f deploy/Dockerfile.web -t ailc-web .
 #   docker run --rm -p 8080:80 ailc-web   # сайт на http://localhost:8080
 #

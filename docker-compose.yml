@@ -1,0 +1,27 @@
+# Публикация лендинга AILC на сервере одной командой.
+#
+# На сервере:
+#   git clone https://github.com/pro-deploy/ailc-web && cd ailc-web
+#   docker compose up -d --build
+#
+# Сайт станет доступен на 80 порту сервера. Чтобы взять другой порт:
+#   PORT=8080 docker compose up -d --build
+#
+# Образ MCP-сервера (./Dockerfile) к публикации сайта отношения не имеет: это бинарь
+# для локального запуска в редакторе, а не веб-сервер. Здесь поднимается только сайт.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    image: ailc-web
+    container_name: ailc-web
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
