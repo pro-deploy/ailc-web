@@ -469,6 +469,12 @@ main section[id], section[id] { scroll-margin-top: 80px; }
 .msg__list li::before { position: absolute; left: 0; top: 0; }
 .msg__list li.bad::before { content: "\2715"; color: var(--fail); }
 .msg__list li.warn::before { content: "\2022"; color: var(--warn); font-size: 1.1em; }
+.msg__list li.good::before { content: "\2713"; color: var(--pass); }
+
+/* кнопки установки в один клик (диплинки редакторов) */
+.quickadd { display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem; margin-bottom: 1.6rem; }
+.quickadd code { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-2); background: var(--bg-2); border: 1px solid var(--line-2); border-radius: 8px; padding: 0.55rem 0.9rem; }
+.quickadd__note { flex-basis: 100%; font-size: var(--step--1); color: var(--muted); }
 .msg__score { font-weight: 600; color: var(--ink) !important; margin-top: 0.6rem; }
 .msg__act { margin-top: 0.7rem; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
 .msg__btn { font-size: 0.8rem; font-weight: 700; color: oklch(0.15 0.02 262); background: var(--primary); padding: 0.3rem 0.8rem; border-radius: 6px; }
